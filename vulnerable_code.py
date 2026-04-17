@@ -8,6 +8,7 @@ def get_user_data(username):
     cursor = conn.cursor()
     # VULNERABILITY: SQL Injection
     query = f"SELECT * FROM users WHERE username = '{username}'"
+    print("hello")
     cursor.execute(query)
     return cursor.fetchall()
 
