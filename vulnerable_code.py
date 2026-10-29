@@ -9,7 +9,7 @@ def get_user_data(username):
     # VULNERABILITY: SQL Injection
     query = f"SELECT * FROM users WHERE username = '{username}'"
     print("hello")
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM table_name WHERE column_name = :value", {'value': user_input})
     return cursor.fetchall()
 
 # Vulnerable to command injection
