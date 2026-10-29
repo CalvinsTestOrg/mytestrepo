@@ -1,4 +1,4 @@
-import pickle
+import json
 import os
 import sqlite3
 
@@ -20,8 +20,8 @@ def backup_user_files(user_folder):
 # Vulnerable to arbitrary code execution
 def load_user_settings(settings_file):
     # VULNERABILITY: Insecure Deserialization
-    with open(settings_file, 'rb') as f:
-        settings = pickle.load(f)
+    with open(settings_file, 'r') as f:
+        settings = json.load(f)
     return settings
 
 # Vulnerable to path traversal
