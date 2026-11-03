@@ -21,7 +21,7 @@ def backup_user_files(user_folder):
 def load_user_settings(settings_file):
     # VULNERABILITY: Insecure Deserialization
     with open(settings_file, 'rb') as f:
-        settings = pickle.load(f)
+        settings = settings = json.load(f)
     return settings
 
 # Vulnerable to path traversal
